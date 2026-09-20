@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get(
     "django-insecure-local-development-key"
 )
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "False").lower() == "true"
+DEBUG = os.environ.get("DEBUG", "True").lower() == "true"
 
 ALLOWED_HOSTS = [
     "localhost",
@@ -125,7 +125,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+
+# Folder where collectstatic gathers all static files
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Media files for uploaded report photos
 MEDIA_URL = '/media/'
