@@ -22,3 +22,7 @@ _legend_crop.png
 _test_report.*
 revision.txt
 /.claude/
+db.sqlite3
+login_credentials.txt
+gsosystem/gsosystem/.git_backup/
+gsosystem_old_backup/

@@ -25,11 +25,12 @@
         }
 
         body {
-            font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--ink);
-            min-height: 100vh;
-            background: #ffffff;
-        }
+    font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+    background: #ffffff;
+    overflow-x: hidden;
+}
 
         /* ---------- SCENE (full-bleed, decorations live here) ---------- */
         .login-card {
@@ -367,28 +368,302 @@
 
         .btn-dean svg { color: var(--green); }
 
-        /* ---------- RESPONSIVE ---------- */
-        @media (max-width: 900px) {
-            .login-card {
-                grid-template-columns: 1fr;
-                min-height: auto;
-            }
-            .brand-panel { padding: 52px 32px 40px; }
-            .brand-logo { width: 120px; height: 120px; }
-            .brand-office { font-size: 28px; }
-            .deco-building { width: 66%; opacity: 0.45; }
-            .deco-curve, .deco-bin { display: none; }
-            .form-side { padding: 8px 24px 48px; }
-            .form-card { box-shadow: none; max-width: 520px; padding: 8px 4px 0; }
-            .welcome { font-size: 32px; }
-        }
+       /* ---------- RESPONSIVE ---------- */
 
-        @media (max-width: 480px) {
-            body { padding: 12px; }
-            .login-card { border-radius: 20px; }
-            .brand-panel { padding: 44px 22px 32px; }
-            .deco-leaves { width: 150px; }
-        }
+/* Tablets and phones */
+@media (max-width: 900px) {
+
+    body {
+        padding: 0;
+        min-height: 100dvh;
+    }
+
+    .login-card {
+        width: 100%;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 0;
+    }
+
+    /* ---------------- LEFT / BRAND AREA ---------------- */
+
+    .brand-panel {
+        width: 100%;
+        min-height: auto;
+        padding: 50px 24px 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .brand-panel::before {
+        inset: 0;
+    }
+
+    .brand-logo {
+        width: 115px;
+        height: 115px;
+        max-width: 35vw;
+        object-fit: contain;
+        margin: 0 auto 12px;
+    }
+
+    .brand-uni {
+        font-size: 15px;
+        line-height: 1.3;
+    }
+
+    .brand-office {
+        font-size: clamp(23px, 7vw, 30px);
+        line-height: 1.15;
+        margin: 4px 0;
+    }
+
+    .brand-system {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    .brand-rule {
+        width: 130px;
+        height: 2px;
+        margin: 15px 0;
+    }
+
+    .brand-sprout {
+        width: 35px;
+        margin-bottom: 10px;
+    }
+
+    .brand-tagline {
+        font-size: 13px;
+        line-height: 1.5;
+        max-width: 300px;
+    }
+
+
+    /* ---------------- DECORATIVE PICTURES ---------------- */
+
+    .deco-leaves {
+        top: 0;
+        left: 0;
+        width: 120px;
+        max-width: 30vw;
+        height: auto;
+    }
+
+    .deco-building {
+        left: 0;
+        bottom: 0;
+        width: 70%;
+        height: 35%;
+        object-fit: cover;
+        object-position: left bottom;
+        opacity: 0.30;
+    }
+
+    .deco-curve {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 120px;
+        display: block;
+    }
+
+    .deco-bin {
+        right: 12px;
+        bottom: 12px;
+        width: 80px;
+        max-width: 20vw;
+        height: auto;
+        display: block;
+    }
+
+
+    /* ---------------- LOGIN FORM ---------------- */
+
+    .form-side {
+        width: 100%;
+        padding: 15px 20px 80px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .form-card {
+        width: 100%;
+        max-width: 520px;
+        padding: 28px 22px;
+        border-radius: 16px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+    }
+
+    .welcome {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .welcome-sub {
+        font-size: 13px;
+        margin-bottom: 25px;
+    }
+
+    .field {
+        margin-bottom: 18px;
+    }
+
+    .field label {
+        font-size: 13px;
+        margin-bottom: 7px;
+    }
+
+    .input-wrap input {
+        padding: 13px 13px 13px 43px;
+        font-size: 14px;
+    }
+
+    .input-wrap .lead-icon {
+        left: 13px;
+    }
+
+    .toggle-eye {
+        right: 10px;
+    }
+
+    .form-row {
+        margin: 2px 0 22px;
+        font-size: 12px;
+    }
+
+    .remember input {
+        width: 16px;
+        height: 16px;
+    }
+
+    .btn-login {
+        padding: 13px;
+        font-size: 15px;
+    }
+
+    .or-divider {
+        margin: 20px 0;
+        font-size: 12px;
+    }
+
+    .btn-dean {
+        padding: 13px;
+        font-size: 14px;
+    }
+}
+
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 0;
+    }
+
+    .login-card {
+        min-height: 100dvh;
+        width: 100%;
+    }
+
+    .brand-panel {
+        padding: 45px 18px 28px;
+    }
+
+    .brand-logo {
+        width: 100px;
+        height: 100px;
+        max-width: 30vw;
+        margin-bottom: 10px;
+    }
+
+    .brand-uni {
+        font-size: 13px;
+    }
+
+    .brand-office {
+        font-size: 23px;
+    }
+
+    .brand-system {
+        font-size: 14px;
+    }
+
+    .brand-rule {
+        width: 110px;
+        margin: 12px 0;
+    }
+
+    .brand-sprout {
+        width: 30px;
+    }
+
+    .brand-tagline {
+        font-size: 12px;
+        max-width: 260px;
+    }
+
+    .deco-leaves {
+        width: 95px;
+    }
+
+    .deco-building {
+        width: 75%;
+        height: 28%;
+        opacity: 0.25;
+    }
+
+    .deco-curve {
+        height: 90px;
+    }
+
+    .deco-bin {
+        width: 65px;
+        right: 8px;
+        bottom: 8px;
+    }
+
+    .form-side {
+        padding: 10px 16px 70px;
+    }
+
+    .form-card {
+        width: 100%;
+        padding: 24px 18px;
+        border-radius: 14px;
+    }
+
+    .welcome {
+        font-size: 27px;
+    }
+
+    .welcome-sub {
+        font-size: 12px;
+        margin-bottom: 22px;
+    }
+
+    .input-wrap input {
+        padding: 12px 12px 12px 40px;
+        font-size: 13px;
+    }
+
+    .btn-login {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .btn-dean {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
     </style>
 </head>
 <body>
